@@ -4,7 +4,8 @@ import { DisplayDataComponent } from './display-data/display-data.component';
 import {
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    MatIconModule
    } 
     from '@angular/material';
 const routes: Routes = [
@@ -19,7 +20,8 @@ const routes: Routes = [
         RouterModule.forChild(routes),
         MatTableModule,
         MatPaginatorModule,
-        MatSortModule
+        MatSortModule,
+        MatIconModule
     ],
     exports: [
         RouterModule,
