@@ -4,6 +4,8 @@ import { MatTableDataSource } from '@angular/material';
 import { DisplayDataService } from '../display-data.service';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
+import jsonlist from '../../../assets/jsonwithobjarray.json';
+import colorslist from '../../../assets/colors.json';
 
 @Component({
   selector: 'app-display-data',
@@ -16,8 +18,14 @@ export class DisplayDataComponent implements OnInit {
   ELEMENT_DATA: any[] = [];
   JsonData: any[] = [];
   datasource: any;
-  displayedColumns  = ['position', 'name', 'weight', 'symbol', 'action']
-  constructor(private ds: DisplayDataService) {     
+  displayedColumns  = ['position', 'name', 'weight', 'symbol', 'action'];
+  obj = JSON.parse('{ "name":"John", "age":30, "city":"New York"}');
+  constructor(private ds: DisplayDataService) {    
+    console.log(jsonlist); 
+    console.log(colorslist.colors);
+    for(var i in colorslist.colors){
+      console.log(colorslist.colors[i]);
+    }
   }
   
   ngOnInit() {   
@@ -28,7 +36,7 @@ export class DisplayDataComponent implements OnInit {
         this.datasource.paginator = this.paginator;
         this.datasource.sort = this.matsort;
       }
-    );     
+    );    
   }
 
 }
